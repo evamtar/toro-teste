@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "toroinvestimentos.patromoni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "toroinvestimentos.patromonio.service", "toroinvestimentos.patromonio.service\toroinvestimentos.patromonio.service.csproj", "{8F2C7739-E679-4643-932A-0ECA43CB45CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroInvestimentos.PatromonioAPI", "ToroInvestimentos.PatromonioAPI\ToroInvestimentos.PatromonioAPI.csproj", "{129F1ABA-C481-48C8-9892-2EA040E25ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroInvestimentos.PatromonioAPI", "ToroInvestimentos.PatromonioAPI\ToroInvestimentos.PatromonioAPI.csproj", "{129F1ABA-C481-48C8-9892-2EA040E25ACE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{D8C9AF69-E424-4146-AE90-180A483F98D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "toroinvestimentos.Test", "toroinvestimentos.Test\toroinvestimentos.Test.csproj", "{82DF2622-2687-4339-9124-28452D0691F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{129F1ABA-C481-48C8-9892-2EA040E25ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{129F1ABA-C481-48C8-9892-2EA040E25ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{129F1ABA-C481-48C8-9892-2EA040E25ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DF2622-2687-4339-9124-28452D0691F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DF2622-2687-4339-9124-28452D0691F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DF2622-2687-4339-9124-28452D0691F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DF2622-2687-4339-9124-28452D0691F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +71,7 @@ Global
 		{D93B5F88-A9D1-4DE2-AF76-A85E589366A4} = {63FF5501-F7D3-4434-BF43-4DDC02C10EC4}
 		{8F2C7739-E679-4643-932A-0ECA43CB45CA} = {B620510E-8F22-4772-9BD2-4FEB5DCCB33E}
 		{129F1ABA-C481-48C8-9892-2EA040E25ACE} = {A59F0993-3BE6-48FA-AFA2-63F6724029A2}
+		{82DF2622-2687-4339-9124-28452D0691F8} = {D8C9AF69-E424-4146-AE90-180A483F98D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3AEBC70C-DD9F-4A50-90FB-3B8C22C71F64}

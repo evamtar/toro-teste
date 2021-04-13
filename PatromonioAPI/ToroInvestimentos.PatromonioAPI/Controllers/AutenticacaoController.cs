@@ -30,7 +30,7 @@ namespace ToroInvestimentos.PatromonioAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult<Usuario> Autenticar([FromBody] Usuario usuario)
+        public IActionResult Autenticar([FromBody] Usuario usuario)
         {
             try
             {
