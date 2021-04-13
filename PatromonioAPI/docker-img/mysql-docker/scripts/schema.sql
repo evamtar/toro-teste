@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS hangfire;
+CREATE SCHEMA IF NOT EXISTS ToroInvestimentos;
+
+

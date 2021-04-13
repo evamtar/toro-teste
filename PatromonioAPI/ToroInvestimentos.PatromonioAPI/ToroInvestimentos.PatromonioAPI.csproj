@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>967f7bd5-64a1-4e7b-b853-0fe309c33b4e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\toroinvestimentos.patromonio.domain\toroinvestimentos.patromonio.domain.csproj" />
+    <ProjectReference Include="..\toroinvestimentos.patromonio.infra.crosscutting\toroinvestimentos.patromonio.infra.crosscutting.csproj" />
+    <ProjectReference Include="..\toroinvestimentos.patromonio.infra.data\toroinvestimentos.patromonio.infra.data.csproj" />
+    <ProjectReference Include="..\toroinvestimentos.patromonio.service\toroinvestimentos.patromonio.service.csproj" />
+  </ItemGroup>
+
+
+</Project>
