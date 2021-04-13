@@ -67,6 +67,11 @@ namespace toroinvestimentos.patromonio.infra.data.Repository.Base
             return _context.Set<T>().Where(filter).FirstOrDefault();
         }
 
+        public virtual Task<T> SelecionarAssincrono(Expression<Func<T, bool>> filter)
+        {
+            return Task.FromResult(_context.Set<T>().Where(filter).FirstOrDefault());
+        }
+
         public virtual IList<T> SelecionarTodos()
         {
             return _context.Set<T>().ToList();

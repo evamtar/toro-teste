@@ -17,7 +17,10 @@ namespace toroinvestimentos.patromonio.infra.data.Context
         #region DbSet 
 
         public DbSet<Usuario> Usuarios { get; set; }
-        
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<ContaCorrente> Contas { get; set; }
+        public DbSet<Transacao> Movimentacoes { get; set; }
+
         #endregion
 
         #region Overrided Methods
@@ -26,6 +29,9 @@ namespace toroinvestimentos.patromonio.infra.data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
+            modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
+            modelBuilder.Entity<ContaCorrente>(new ContaCorrenteMap().Configure);
+            modelBuilder.Entity<Transacao>(new TransacaoMap().Configure);
         }
 
         #endregion

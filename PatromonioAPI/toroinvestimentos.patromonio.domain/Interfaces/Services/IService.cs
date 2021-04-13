@@ -18,6 +18,8 @@ namespace toroinvestimentos.patromonio.domain.Interfaces.Services
 
         T Selecionar(Expression<Func<T, bool>> filter);
 
+        Task<T> SelecionarAssincrono(Expression<Func<T, bool>> filter);
+
         IList<T> Buscar(Expression<Func<T, bool>> filter);
 
         Task<IList<T>> BuscarAssincrono(Expression<Func<T, bool>> filter);

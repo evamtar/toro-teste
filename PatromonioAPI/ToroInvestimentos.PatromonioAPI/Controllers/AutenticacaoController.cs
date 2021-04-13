@@ -47,24 +47,6 @@ namespace ToroInvestimentos.PatromonioAPI.Controllers
             }
         }
 
-        [Authorize]
-        [HttpGet]
-        public ActionResult<Usuario> Buscar()
-        {
-            try
-            {
-                return Ok(null);
-            }
-            catch (InvalidLoginException ex)
-            {
-                return Unauthorized(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return Forbid(ex.Message);
-            }
-        }
-
         #endregion
 
 

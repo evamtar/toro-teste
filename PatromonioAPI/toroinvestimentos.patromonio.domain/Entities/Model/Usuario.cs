@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -40,6 +41,9 @@ namespace toroinvestimentos.patromonio.domain.Entities.Model
 
         public DateTime Expiracao { get; internal set; }
 
+
+        [JsonIgnore]
+        public virtual ICollection<Cliente> Clientes { get; set; }
 
         public void generatedData(string userId, string token, DateTime expiracao) 
         {

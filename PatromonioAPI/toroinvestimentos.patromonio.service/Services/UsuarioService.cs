@@ -6,6 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 using toroinvestimentos.patromonio.domain.Configuration;
 using toroinvestimentos.patromonio.domain.Entities.Model;
 using toroinvestimentos.patromonio.domain.Entities.Validator;

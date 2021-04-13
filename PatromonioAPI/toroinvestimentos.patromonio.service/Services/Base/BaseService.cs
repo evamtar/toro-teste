@@ -50,6 +50,11 @@ namespace toroinvestimentos.patromonio.service.Services.Base
             return await _repository.BuscarAssincrono(filter);
         }
 
+        public async Task<T> SelecionarAssincrono(Expression<Func<T, bool>> filter)
+        {
+            return await _repository.SelecionarAssincrono(filter);
+        }
+
         public virtual T Selecionar(Expression<Func<T, bool>> filter)
         {
             return _repository.Selecionar(filter);

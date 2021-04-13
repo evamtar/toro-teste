@@ -9,6 +9,9 @@ namespace ToroInvestimentos.PatromonioAPI
         public static IServiceCollection InjectioAllRepositories(this IServiceCollection services)
         {
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
+            services.AddScoped<ITransacaoRepository, TransacaoRepository>();
             return services;
         }
     }
