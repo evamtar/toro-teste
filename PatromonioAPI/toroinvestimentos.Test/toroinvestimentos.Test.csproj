@@ -22,10 +22,4 @@
     <ProjectReference Include="..\ToroInvestimentos.PatromonioAPI\ToroInvestimentos.PatromonioAPI.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infra\CrossCutting\" />
-    <Folder Include="Infra\Data\" />
-    <Folder Include="Service\" />
-  </ItemGroup>
-
 </Project>
