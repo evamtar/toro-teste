@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using toroinvestimentos.patromonio.domain.Entities.Model;
 using toroinvestimentos.patromonio.domain.Exceptions;

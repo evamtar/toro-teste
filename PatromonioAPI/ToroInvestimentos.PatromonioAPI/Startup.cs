@@ -21,7 +21,6 @@ namespace ToroInvestimentos.PatromonioAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -70,13 +69,23 @@ namespace ToroInvestimentos.PatromonioAPI
             services.InjectioAllServices();
             services.InjectioAllRepositories();
             services.InjectioAllCrossCuttings();
-            
+
             #endregion
+
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy", builder => builder
+                .SetIsOriginAllowed(s => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("CorsPolicy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -88,7 +97,7 @@ namespace ToroInvestimentos.PatromonioAPI
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

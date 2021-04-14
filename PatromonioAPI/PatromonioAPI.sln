@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroInvestimentos.Patromoni
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{D8C9AF69-E424-4146-AE90-180A483F98D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "toroinvestimentos.Test", "toroinvestimentos.Test\toroinvestimentos.Test.csproj", "{82DF2622-2687-4339-9124-28452D0691F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "toroinvestimentos.Test", "toroinvestimentos.Test\toroinvestimentos.Test.csproj", "{82DF2622-2687-4339-9124-28452D0691F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
