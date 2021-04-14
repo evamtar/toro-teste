@@ -40,6 +40,7 @@ namespace ToroInvestimentos.PatromonioAPI.Controllers
             try
             {
                 var ativos = await _ativoService.BuscarAssincrono(atv => atv.ClienteId == idCliente);
+                ativos = ativos.OrderBy(atv => atv.CodigoBovespa).ToList();
                 foreach (var ativo in ativos)
                 {
                     var valorAtivo = await _consultaBovespaService.ConsultaValor(new BovespaExternal { CodigoPapel = ativo.CodigoBovespa });

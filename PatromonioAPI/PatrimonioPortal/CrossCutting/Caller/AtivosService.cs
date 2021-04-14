@@ -51,10 +51,10 @@ namespace PatrimonioPortal.CrossCutting.Caller
                             return new List<AtivoModel> { };
 
                         var returnModel = JsonConvert.DeserializeObject<IList<AtivoModel>>(message);
-                        await _cache.SetStringAsync("Cliente_" + idCliente, JsonConvert.SerializeObject(returnModel),
+                        await _cache.SetStringAsync("AtivoCliente_" + idCliente, JsonConvert.SerializeObject(returnModel),
                                          new DistributedCacheEntryOptions
                                          {
-                                             AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(5)
+                                             AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(15)
                                          });
                         return returnModel;
                     }

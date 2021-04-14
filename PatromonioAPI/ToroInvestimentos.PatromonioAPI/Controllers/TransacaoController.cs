@@ -37,6 +37,7 @@ namespace ToroInvestimentos.PatromonioAPI.Controllers
             try
             {
                 var movimentacoes = await _transacaoService.BuscarAssincrono(cli => cli.ContaCorrenteId == idContaCorrente);
+                movimentacoes = movimentacoes.OrderBy(mov => mov.DataOperacao).ThenBy(mov => mov.Hora).ToList();
                 return Ok(movimentacoes);
             }
             catch (Exception ex)
