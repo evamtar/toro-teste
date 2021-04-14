@@ -12,6 +12,7 @@ namespace toroinvestimentos.patromonio.infra.data.Mapping
         public void Configure(EntityTypeBuilder<Transacao> builder)
         {
             builder.ToTable("TRANSACAO");
+            builder.Ignore(e => e.HoraOperacao);
 
             builder.Property(e => e.Id)
                 .HasColumnName("TRANSACAO_ID")
@@ -27,7 +28,7 @@ namespace toroinvestimentos.patromonio.infra.data.Mapping
             builder.Property(e => e.DataOperacao)
                 .HasColumnName("DATA_OPERACAO");
 
-            builder.Property(e => e.HoraOperacao)
+            builder.Property(e => e.Hora)
                 .HasColumnName("HORA_OPERACAO");
 
             builder.Property(e => e.ContaCorrenteId)

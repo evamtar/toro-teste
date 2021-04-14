@@ -36,7 +36,7 @@ namespace toroinvestimentos.patromonio.service.Services
         public override Transacao Incluir<V>(Transacao entity)
         {
             entity.DataOperacao = DateTime.Now;
-            entity.HoraOperacao = DateTime.Now.TimeOfDay;
+            entity.Hora = DateTime.Now.TimeOfDay;
             this.Validar<V>(entity);
             var transacao = entity;
             var contasCorrente = _contaCorrenteRepository.Buscar(cc => cc.Id == entity.ContaCorrenteId);

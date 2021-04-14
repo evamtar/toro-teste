@@ -19,24 +19,37 @@
         <div class="widget-header">
             <i class="icon-th-list"></i>
             <h5>Agência: @Model.Conta.Agencia C/C: @Model.Conta.NumeroFormatado</h5>
-        </div> <!-- /widget-header -->
+        </div>
         <div class="widget-content">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Data Movimentação</th>
+                        <th>Tipo Operação</th>
+                        <th>Data</th>
+                        <th>Hora</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01/03/2021</td>
-                        <td>153,22</td>
-                    </tr>
-                    <tr>
-                        <td>31/03/2021</td>
-                        <td>457,98</td>
-                    </tr>
+                    @if (Model.Transacoes != null)
+                    {
+                        foreach (var item in Model.Transacoes)
+                        {
+                            <tr>
+                                <td>@item.TipoOperacao</td>
+                                <td>@item.DataOperacao.ToString("dd/MM/yyyy")</td>
+                                <td>@item.HoraOperacao</td>
+                                @if (item.TipoOperacao == "C")
+                                {
+                                    <td style="color:blue">@item.Valor.ToString("N2")</td>
+                                }
+                                else
+                                {
+                                    <td style="color:red">@item.Valor.ToString("N2")</td>
+                                }
+                            </tr>
+                        }
+                    }
                 </tbody>
             </table>
             <div class="row">
@@ -48,6 +61,58 @@
                 </div>
             </div>
         </div>
+    </div>
+    <br />
+    <div class="widget stacked widget-table action-table">
+        <div class="widget-header">
+            <i class="icon-th-list"></i>
+            <h5>Ativos</h5>
+        </div>
+        <div class="widget-content">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Ativos != null)
+                    {
+                        foreach (var item in Model.Ativos)
+                        {
+                            <tr>
+                                <td>@item.CodigoBovespa</td>
+                                <td>@item.Descricao</td>
+                                <td>@item.Quantidade.ToString()</td>
+                                <td>@item.ValorUnitario.ToString("N2")</td>
+                                <td>@item.ValorTotal.ToString("N2")</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-9">
+                    <b>Total Ativos</b>
+                </div>
+                <div class="col-3" style="display:flex">
+                    <b style="margin-left:auto">R$ @Model.TotalAtivos.ToString("N2")</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-9">
+        <b>Total Patrimônio</b>
+    </div>
+    <div class="col-3" style="display:flex">
+        <b style="margin-left:auto">R$ @Model.PatrimonioTotal.ToString("N2")</b>
     </div>
 </div>
 <script>

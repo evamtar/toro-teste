@@ -11,7 +11,17 @@ namespace toroinvestimentos.patromonio.domain.Entities.Model
         public string TipoOperacao { get; set; }
         public decimal Valor { get; set; }
         public DateTime DataOperacao {get;set;}
-        public TimeSpan HoraOperacao { get; set; }
+
+        [JsonIgnore]
+        public TimeSpan Hora { get; set; }
+
+        public string HoraOperacao 
+        { 
+            get 
+            {
+                return string.Concat(this.Hora.Hours.ToString("00"), ":", this.Hora.Minutes.ToString("00"), ":", this.Hora.Seconds.ToString("00"));
+            } 
+        }
 
         [JsonIgnore]
         public string ContaCorrenteId { get; set; }

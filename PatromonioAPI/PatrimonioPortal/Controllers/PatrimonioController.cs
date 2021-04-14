@@ -36,7 +36,7 @@ namespace PatrimonioPortal.Controllers
             PatrominioConsolidadoModel model = new PatrominioConsolidadoModel { Cliente = cliente, Token = cliente.Token };
             model.Conta = await _contaCorrenteService.GetContaCorrentAsync(cliente.Token, cliente.Id);
             model.Ativos = await _ativosService.GetListAtivosAsync(cliente.Token, cliente.Id);
-            model.Transacoes = await _transacaoService.GetListAsync(cliente.Token, cliente.Id);
+            model.Transacoes = await _transacaoService.GetListAsync(cliente.Token, model.Conta.Id);
             return View(model);
         }
     }

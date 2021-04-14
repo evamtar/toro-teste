@@ -10,6 +10,6 @@ namespace PatrimonioPortal.Models
         public string TipoOperacao { get; set; }
         public decimal Valor { get; set; }
         public DateTime DataOperacao { get; set; }
-        public TimeSpan HoraOperacao { get; set; }
+        public string HoraOperacao { get; set; }
     }
 }
