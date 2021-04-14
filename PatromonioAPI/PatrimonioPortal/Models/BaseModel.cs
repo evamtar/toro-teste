@@ -7,6 +7,7 @@ namespace PatrimonioPortal.Models
 {
     public class BaseModel
     {
+        public string Token { get; set; }
         public bool HasErrors { get; set; }
 
         public string ErrorTitle { get; set; }

@@ -30,9 +30,10 @@ namespace PatrimonioPortal
 
             services.Configure<PatrimonioURL>(Configuration.GetSection("PatrimonioURL"));
 
-            #region CrossCutting Methos
+            #region CrossCutting Methods
 
             services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<IClienteService, ClienteService>();
 
             #endregion
         }

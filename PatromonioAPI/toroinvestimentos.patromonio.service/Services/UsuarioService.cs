@@ -47,7 +47,7 @@ namespace toroinvestimentos.patromonio.service.Services
                 throw new InvalidLoginException("O login / senha inválidos.");
             else
             {
-                entity.generatedData(usuarios.FirstOrDefault().Id, this.GerarToken(entity), DateTime.UtcNow.AddHours(1));
+                entity.generatedData(usuarios.FirstOrDefault().Id, this.GerarToken(entity, usuarios.FirstOrDefault().Id), DateTime.UtcNow.AddHours(1));
             }
             return entity;
         }
@@ -56,7 +56,7 @@ namespace toroinvestimentos.patromonio.service.Services
 
         #region Metodos Privados
 
-        private string GerarToken(Usuario entity)
+        private string GerarToken(Usuario entity, string userData)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_settings.Value.Key);
@@ -64,10 +64,10 @@ namespace toroinvestimentos.patromonio.service.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, entity.Login),
-                    new Claim(ClaimTypes.Expired, DateTime.UtcNow.AddHours(1).TimeOfDay.ToString())
+                    new Claim(ClaimTypes.UserData, userData),
+                    new Claim(ClaimTypes.Name, entity.Login)
                 }),
-                Expires = DateTime.UtcNow.AddHours(1),
+                Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
