@@ -39,7 +39,8 @@ namespace ToroInvestimentos.PatromonioAPI
             #region Configuration
 
             services.Configure<JWTConfiguration>(Configuration.GetSection("JWT"));
-
+            services.Configure<BovespaConfiguration>(Configuration.GetSection("BOVESPA"));
+            
             #endregion
 
             #region Autenticacao

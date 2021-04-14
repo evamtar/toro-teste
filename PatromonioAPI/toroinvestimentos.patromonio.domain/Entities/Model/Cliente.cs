@@ -18,6 +18,10 @@ namespace toroinvestimentos.patromonio.domain.Entities.Model
         public virtual ICollection<ContaCorrente> Contas { get; set; }
 
         [JsonIgnore]
+        public virtual ICollection<Ativo> Ativos { get; set; }
+        
+
+        [JsonIgnore]
         /// <summary>
         /// Relacionamentos
         /// </summary>

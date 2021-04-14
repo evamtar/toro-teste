@@ -12,6 +12,7 @@ namespace ToroInvestimentos.PatromonioAPI
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IContaCorrenteRepository, ContaCorrenteRepository>();
             services.AddScoped<ITransacaoRepository, TransacaoRepository>();
+            services.AddScoped<IAtivoRepository, AtivoRepository>();
             return services;
         }
     }

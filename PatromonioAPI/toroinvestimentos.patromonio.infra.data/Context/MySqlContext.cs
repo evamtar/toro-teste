@@ -20,6 +20,7 @@ namespace toroinvestimentos.patromonio.infra.data.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<ContaCorrente> Contas { get; set; }
         public DbSet<Transacao> Movimentacoes { get; set; }
+        public DbSet<Ativo> Ativos { get; set; }
 
         #endregion
 
@@ -32,6 +33,7 @@ namespace toroinvestimentos.patromonio.infra.data.Context
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
             modelBuilder.Entity<ContaCorrente>(new ContaCorrenteMap().Configure);
             modelBuilder.Entity<Transacao>(new TransacaoMap().Configure);
+            modelBuilder.Entity<Ativo>(new AtivoMap().Configure);
         }
 
         #endregion
