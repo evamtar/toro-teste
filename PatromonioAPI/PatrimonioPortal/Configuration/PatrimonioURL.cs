@@ -9,11 +9,9 @@ namespace PatrimonioPortal.Configuration
     {
         public string BaseURL { get; set; }
         public string LoginUrl { get; set; }
-
         public string ClienteUrl { get; set; }
-
         public string ContaUrl { get; set; }
-
         public string TransacaoUrl { get; set; }
+        public string AtivoURL { get; set; }
     }
 }

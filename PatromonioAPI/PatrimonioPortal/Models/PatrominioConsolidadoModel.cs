@@ -9,5 +9,7 @@ namespace PatrimonioPortal.Models
     {
         public ClienteModel Cliente { get; set; }
         public ContaModel Conta { get; set; }
+        public IList<AtivoModel> Ativos { get; set; }
+        public IList<TransacaoModel> Transacoes { get; set; }
     }
 }

@@ -37,7 +37,8 @@ namespace PatrimonioPortal
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IContaCorrenteService, ContaCorrenteService>();
-
+            services.AddScoped<IAtivosService, AtivosService>();
+            services.AddScoped<ITransacaoService, TransacaoService>(); 
             #endregion
         }
 

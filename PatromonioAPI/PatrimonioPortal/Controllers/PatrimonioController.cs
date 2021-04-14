@@ -13,14 +13,20 @@ namespace PatrimonioPortal.Controllers
         #region Variaveis
 
         private readonly IContaCorrenteService _contaCorrenteService;
+        private readonly IAtivosService _ativosService;
+        private readonly ITransacaoService _transacaoService;
 
         #endregion
 
         #region Construtores
 
-        public PatrimonioController(IContaCorrenteService contaCorrenteService) 
+        public PatrimonioController(IContaCorrenteService contaCorrenteService,
+                                    IAtivosService ativosService,
+                                    ITransacaoService transacaoService) 
         {
             _contaCorrenteService = contaCorrenteService;
+            _ativosService = ativosService;
+            _transacaoService = transacaoService;
         }
 
         #endregion
@@ -29,6 +35,8 @@ namespace PatrimonioPortal.Controllers
         {
             PatrominioConsolidadoModel model = new PatrominioConsolidadoModel { Cliente = cliente, Token = cliente.Token };
             model.Conta = await _contaCorrenteService.GetContaCorrentAsync(cliente.Token, cliente.Id);
+            model.Ativos = await _ativosService.GetListAtivosAsync(cliente.Token, cliente.Id);
+            model.Transacoes = await _transacaoService.GetListAsync(cliente.Token, cliente.Id);
             return View(model);
         }
     }
