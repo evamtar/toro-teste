@@ -1,0 +1,62 @@
+﻿@using PatrimonioPortal.Models;
+@model PatrominioConsolidadoModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutLogged.cshtml";
+}
+@section Style{
+    <style>
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+    </style>
+}
+<br />
+<br />
+<div class="span7">
+    <div class="widget stacked widget-table action-table">
+        <div class="widget-header">
+            <i class="icon-th-list"></i>
+            <h5>Agência: @Model.Conta.Agencia C/C: @Model.Conta.NumeroFormatado</h5>
+        </div> <!-- /widget-header -->
+        <div class="widget-content">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Data Movimentação</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/03/2021</td>
+                        <td>153,22</td>
+                    </tr>
+                    <tr>
+                        <td>31/03/2021</td>
+                        <td>457,98</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-9">
+                    <b>Saldo disponível</b>
+                </div>
+                <div class="col-3" style="display:flex">
+                    <b style="margin-left:auto">R$ @Model.Conta.Saldo.ToString("N2")</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".nav-item").removeClass("active");
+    $("#lnkPatrominio").addClass("active");
+</script>
+
+@section HiddenFields{
+    @Html.Hidden("hdnClientId", Model.Cliente.Id)
+    @Html.Hidden("hdnToken", Model.Token)
+}
+

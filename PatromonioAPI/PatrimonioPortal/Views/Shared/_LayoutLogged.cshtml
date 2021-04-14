@@ -22,8 +22,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Saldo Consolidado</a>
+                <a id="lnkHome" class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+                <a id="lnkPatrominio" class="nav-item nav-link" href="#">Patrominio Consolidado</a>
             </div>
         </div>
     </nav>
@@ -75,5 +75,22 @@
             $("#btnModal").click();
         </script>
     }
+    @RenderSection("HiddenFields", required: false)
+    <script>
+        $(document).ready(function () {
+            $("#lnkHome").click(function (e)
+            {
+                $(".nav-item").removeClass("active");
+                $(this).addClass("active");
+                window.location = '/Home/Back?Id='+ $("#hdnClientId").val() + '&Token=' + $("#hdnToken").val();
+            });
+            $("#lnkPatrominio").click(function (e)
+            {
+                $(".nav-item").removeClass("active");
+                $(this).addClass("active");
+                window.location = '/Patrimonio/Index?Id='+ $("#hdnClientId").val() + '&Token=' + $("#hdnToken").val();
+            });
+        });
+    </script>
 </body>
 </html>

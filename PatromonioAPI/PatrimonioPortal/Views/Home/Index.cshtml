@@ -1,8 +1,28 @@
-﻿
+﻿@using PatrimonioPortal.Models;
+@model ClienteModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutLogged.cshtml";
 }
+@section Style{
+    <style>
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+    </style>
+}
+<div class="starter-template">
+    <h1>Porquê investir em Fundos de Investimento?</h1>
+    <p class="lead">Com os Fundos, você tem gestores profissionais focados em escolher a melhor forma de investir o seu dinheiro.<br> Outra vantagem é que, mesmo com poucos recursos, você consegue diversificar: cada Fundo investe em vários ativos ao mesmo tempo.</p>
+</div>
+<script>
+    $(".nav-item").removeClass("active");
+    $("#lnkHome").addClass("active");
+</script>
 
-<h1>Index</h1>
+@section HiddenFields{
+    @Html.Hidden("hdnClientId", Model.Id)
+    @Html.Hidden("hdnToken", Model.Token)
+}
 

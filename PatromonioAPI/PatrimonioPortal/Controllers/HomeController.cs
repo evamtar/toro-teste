@@ -30,5 +30,10 @@ namespace PatrimonioPortal.Controllers
             var cliente = await _clienteService.GetClientAsync(model.Token, model.Id);
             return View(cliente);
         }
+
+        public IActionResult Back(ClienteModel model)
+        {
+            return View("Index", model);
+        }
     }
 }
