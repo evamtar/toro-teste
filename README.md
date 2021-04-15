@@ -1,10 +1,10 @@
 # Pre-requisitos
-##Instalar
+## Instalar
 
 - docker
 https://hub.docker.com/editions/community/docker-ce-desktop-windows/
 
--workbench (mysql)
+- workbench (mysql)
 https://dev.mysql.com/downloads/file/?id=500617
 
 # Subir imagens
