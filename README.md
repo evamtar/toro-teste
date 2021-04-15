@@ -16,11 +16,11 @@ Nela teremos
 - Docker para redis
 - Docker para rabbit (adicional)
 
-** comando para subir os container:
+** comando para subir os container: **
 
 docker-componse up (na pasta das configurações do container)
 
-** OBS: para login e senha consultar o arquivo de config do projeto / docker-compose.yml
+** OBS: para login e senha consultar o arquivo de config do projeto / docker-compose.yml **
 
 # Inicializar Swagger
 - http://localhost:5000/swagger/index.html
